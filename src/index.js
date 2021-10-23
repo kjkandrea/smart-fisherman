@@ -52,10 +52,21 @@ const fishing3 = places =>
     .take(3)
     .value()
 
+// Ramda & handmade Lazy
+import R from 'ramda'
+import L, { take } from './lazy.js'
 
+const fishing4 = R.pipe(
+  L.map(({ fishList }) => fishList),
+  L.flatten,
+  L.filter(({ fish }) => fish === '🐋'),
+  L.filter(({ cm }) => 2200 <= cm),
+  take(3)
+)
 
 logger('Array method chain', fishing1.bind(null, places))
 logger('Lodash chain', fishing2.bind(null, places))
 logger('Lazy chain', fishing3.bind(null, places))
+logger('Ramda & handmade Lazy', fishing4.bind(null, places))
 
 // Lodash flow
