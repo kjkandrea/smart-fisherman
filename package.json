@@ -1,0 +1,21 @@
+{
+  "name": "smart-fisherman",
+  "version": "1.0.0",
+  "description": "enjoy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjkandrea/smart-fisherman.git"
+  },
+  "dependencies": {
+    "lazy": "^1.0.11",
+    "lazy.js": "^0.5.1",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.14",
+    "ramda": "^0.27.1"
+  }
+}
