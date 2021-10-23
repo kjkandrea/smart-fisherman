@@ -1,7 +1,8 @@
 const logger = (name, func) => {
   console.time(name)
-  console.log(func())
+  const result = func()
   console.timeEnd(name)
+  console.log(result)
 }
 
 export default logger;

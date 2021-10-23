@@ -11,7 +11,8 @@ import logger from './logger.js'
  *      }[]
  *   }[]
  */
-const { places } = generateFishingPlace()
+const { places } = generateFishingPlace(10000, ['⛴'])
+console.log('is ready')
 
 /**
  * @QUIZ : 2,200cm 이상의 🐋 3마리 잡기
