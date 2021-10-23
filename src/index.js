@@ -4,11 +4,11 @@ import { goFishing } from './FishingPlace/index.js'
  * @places
  * [
  *   {
- *     state: 'alaska',
+ *     state: string,
  *     fishList: [
  *       {
- *         fish: '🐡',
- *         cm: 30'
+ *         fish: '🐡'|'🐠'|'🦑'|'🐋',
+ *         cm: number'
  *       }
  *     ]
  *   }
