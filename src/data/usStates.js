@@ -1,3 +1,4 @@
+// usStates.length = 55
 const usStates = [
   'alaska',
   'alabama',
