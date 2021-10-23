@@ -1,5 +1,5 @@
 # smart-fisherman
-![fisherman](https://raw.githubusercontent.com/kjkandrea/smart-fisherman/master/fisher.jpeg?raw=true)
+![fisherman](https://raw.githubusercontent.com/kjkandrea/smart-fisherman/master/fisher.jpeg?raw=true=x250)
 
 다양한 방법으로 물고기를 잡아볼 수 있는 객체 생성자.
 
@@ -12,7 +12,7 @@ npm install
 
 ### generateFishingPlace
 `generateFishingPlace` 를 통해 낚시터를 생성할 수 있습니다.
-```
+``` javascript
 import { generateFishingPlace } from './FishingPlace/index.js'
 
 const { places } = generateFishingPlace()
@@ -24,7 +24,7 @@ const { places } = generateFishingPlace()
 generateFishingPlace(
     states: string[], // 낚시 장소들
     howMany: number, // 낚시 장소 당 생성되는 물고기 수
-) => { places }
+): { places: Places } // 생성된 낚시터들
 ```
 
 places 는 다음과 같은 구조를 지닙니다.
