@@ -1,1 +1,3 @@
-console.log('hello')
+import { goFishing } from './FishingPlace/index.js'
+
+goFishing()
