@@ -62,4 +62,10 @@ const fishing = places =>
     value()
 
 logger('My Lazy chain', fishing.bind(null, places))
-```
+// [
+//   { fish: '🐋', cm: 2387 },
+//   { fish: '🐋', cm: 2207 },
+//   { fish: '🐋', cm: 2444 }
+// ]
+// My Lazy chain: 1.001ms
+```              
