@@ -3,17 +3,13 @@ import logger from './logger.js'
 
 /**
  * @places
- * [
  *   {
  *     placeName: string,
- *     fishList: [
- *       {
+ *     fishList: {
  *         fish: '🐡'|'🐠'|'🦑'|'🐋',
  *         cm: number'
- *       }
- *     ]
- *   }
- * ]
+ *      }[]
+ *   }[]
  */
 const { places } = generateFishingPlace()
 
@@ -23,36 +19,38 @@ const { places } = generateFishingPlace()
 
 // Array method chain
 import { take } from './lazy.js'
-Array.prototype.take = take;
+
+Array.prototype.take = take
 const fishing1 = places =>
-  places
-    .map(({ fishList }) => fishList)
-    .flat()
-    .filter(({ fish }) => fish === '🐋')
-    .filter(({ cm }) => 2200 <= cm)
-    .splice(0, 3)
+  places.map(({ fishList }) => fishList).
+    flat().
+    filter(({ fish }) => fish === '🐋').
+    filter(({ cm }) => 2200 <= cm).
+    splice(0, 3)
 
 // Lodash chain
 import _ from 'lodash'
+
 const fishing2 = places =>
-    _.chain(places)
-      .map(({ fishList }) => fishList)
-      .flatten()
-      .filter(({ fish }) => fish === '🐋')
-      .filter(({ cm }) => 2200 <= cm)
-      .take(3)
-      .value()
+  _.chain(places).
+    map(({ fishList }) => fishList).
+    flatten().
+    filter(({ fish }) => fish === '🐋').
+    filter(({ cm }) => 2200 <= cm).
+    take(3).
+    value()
 
 // Lazy chain
 import Lazy from 'lazy.js'
+
 const fishing3 = places =>
-  Lazy(places)
-    .map(({ fishList }) => fishList)
-    .flatten()
-    .filter(({ fish }) => fish === '🐋')
-    .filter(({ cm }) => 2200 <= cm)
-    .take(3)
-    .value()
+  Lazy(places).
+    map(({ fishList }) => fishList).
+    flatten().
+    filter(({ fish }) => fish === '🐋').
+    filter(({ cm }) => 2200 <= cm).
+    take(3).
+    value()
 
 // Ramda & handmade Lazy
 import R from 'ramda'
@@ -63,7 +61,7 @@ const fishing4 = R.pipe(
   L.flatten,
   L.filter(({ fish }) => fish === '🐋'),
   L.filter(({ cm }) => 2200 <= cm),
-  take(3)
+  take(3),
 )
 
 logger('Array method chain', fishing1.bind(null, places))
