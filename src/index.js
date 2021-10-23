@@ -24,7 +24,8 @@ const { places } = generateFishingPlace()
 // Array method chain
 const fishing1 = places =>
   places
-    .flatMap(({ fishList }) => fishList)
+    .map(({ fishList }) => fishList)
+    .flat()
     .filter(({ fish }) => fish === '🐋')
     .filter(({ cm }) => 2200 <= cm)
     .splice(0, 3)
@@ -33,7 +34,8 @@ const fishing1 = places =>
 import _ from 'lodash'
 const fishing2 = places =>
     _.chain(places)
-      .flatMap(({ fishList }) => fishList)
+      .map(({ fishList }) => fishList)
+      .flatten()
       .filter(({ fish }) => fish === '🐋')
       .filter(({ cm }) => 2200 <= cm)
       .take(3)
