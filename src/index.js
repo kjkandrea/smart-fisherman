@@ -4,7 +4,7 @@ import { goFishing } from './FishingPlace/index.js'
  * @places
  * [
  *   {
- *     state: string,
+ *     place: string,
  *     fishList: [
  *       {
  *         fish: '🐡'|'🐠'|'🦑'|'🐋',
