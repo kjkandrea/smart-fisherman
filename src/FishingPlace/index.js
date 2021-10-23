@@ -12,7 +12,7 @@ export class FishingPlace {
 
   getStateInFish(fishEntries, states, howMany) {
     return states.map(state => ({
-      place: state,
+      placeName: state,
       fishList: this.genFishList(fishEntries, howMany)
     }))
   }

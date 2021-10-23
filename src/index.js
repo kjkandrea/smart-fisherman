@@ -4,7 +4,7 @@ import { goFishing } from './FishingPlace/index.js'
  * @places
  * [
  *   {
- *     place: string,
+ *     placeName: string,
  *     fishList: [
  *       {
  *         fish: '🐡'|'🐠'|'🦑'|'🐋',
@@ -15,4 +15,3 @@ import { goFishing } from './FishingPlace/index.js'
  * ]
  */
 const { places } = goFishing()
-console.log(places[0])
