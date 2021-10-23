@@ -70,5 +70,3 @@ logger('Array method chain', fishing1.bind(null, places))
 logger('Lodash chain', fishing2.bind(null, places))
 logger('Lazy chain', fishing3.bind(null, places))
 logger('Ramda & handmade Lazy', fishing4.bind(null, places))
-
-// Lodash flow
