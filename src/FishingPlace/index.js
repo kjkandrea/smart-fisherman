@@ -6,50 +6,48 @@ export class FishingPlace {
     this._places = this.getStateInFish(fishEntries, states, howMany)
   }
 
-  get places() {
+  get places () {
     return this._places
   }
 
-  getStateInFish(fishEntries, states, howMany) {
+  getStateInFish (fishEntries, states, howMany) {
     return states.map(state => ({
       placeName: state,
-      fishList: this.genFishList(fishEntries, howMany)
+      fishList: this.genFishList(fishEntries, howMany),
     }))
   }
 
-  genFishList(fishEntries, howMany) {
+  genFishList (fishEntries, howMany) {
     const candidate = this.getCandidate(fishEntries)
     return Array(howMany).fill(null).map(_ => this.pickFish(candidate))
   }
 
-  getCandidate(fishEntries) {
-    return fishEntries
-    .map(item => ({
+  getCandidate (fishEntries) {
+    return fishEntries.map(item => ({
       fish: item.fish,
       range: item.range,
       length: Math.floor(item.percentage * 100),
-    }))
-    .reduce((candidate, { fish, range, length }) =>
-      candidate.concat(Array(length).fill({
-        fish,
-        range
-      }))
-    , [])
+    })).reduce((candidate, { fish, range, length }) =>
+        candidate.concat(Array(length).fill({
+          fish,
+          range,
+        }))
+      , [])
   }
 
-  pickFish(candidate) {
-    const { fish, range: [min, max] } = candidate[getRandomNumber(0, candidate.length)]
+  pickFish (candidate) {
+    const { fish, range: [min, max] } = candidate[getRandomNumber(0,
+      candidate.length)]
     const cm = getRandomNumber(min, max)
     return {
       fish,
-      cm
+      cm,
     }
   }
 }
 
-function getRandomNumber(min, max) {
+function getRandomNumber (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-export const generateFishingPlace = (states = usStates, howManyFish = 1000)
-  => new FishingPlace(fishEntries, states, howManyFish)
+export const generateFishingPlace = (states = usStates, howManyFish = 1000) => new FishingPlace(fishEntries, states, howManyFish)
