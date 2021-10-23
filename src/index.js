@@ -30,7 +30,7 @@ const fishing1 = places =>
     .flat()
     .filter(({ fish }) => fish === '🐋')
     .filter(({ cm }) => 2200 <= cm)
-    .take(3)
+    .splice(0, 3)
 
 // Lodash chain
 import _ from 'lodash'
