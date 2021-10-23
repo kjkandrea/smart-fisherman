@@ -41,7 +41,7 @@ const fishing2 = places =>
       .take(3)
       .value()
 
-//
+// Lazy chain
 import Lazy from 'lazy.js'
 const fishing3 = places =>
   Lazy(places)
