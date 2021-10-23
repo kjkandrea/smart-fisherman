@@ -51,4 +51,4 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-export const generateFishingPlace = () => new FishingPlace(fishEntries, usStates, 1000)
+export const generateFishingPlace = (howMany = 1000) => new FishingPlace(fishEntries, usStates, howMany)

@@ -18,9 +18,6 @@ const { places } = generateFishingPlace()
  */
 
 // Array method chain
-import { take } from './lazy.js'
-
-Array.prototype.take = take
 const fishing1 = places =>
   places.map(({ fishList }) => fishList).
     flat().
@@ -54,7 +51,7 @@ const fishing3 = places =>
 
 // Ramda & handmade Lazy
 import R from 'ramda'
-import L from './lazy.js'
+import L, { take } from './lazy.js'
 
 const fishing4 = R.pipe(
   L.map(({ fishList }) => fishList),
