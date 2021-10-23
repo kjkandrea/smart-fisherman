@@ -29,8 +29,6 @@ const fishing1 = places =>
     .filter(({ cm }) => 2200 <= cm)
     .splice(0, 3)
 
-logger('Array method chain', fishing1.bind(null, places))
-
 // Lodash chain
 import _ from 'lodash'
 const fishing2 = places =>
@@ -40,4 +38,22 @@ const fishing2 = places =>
       .filter(({ cm }) => 2200 <= cm)
       .take(3)
       .value()
+
+//
+import Lazy from 'lazy.js'
+const fishing3 = places =>
+  Lazy(places)
+    .map(({ fishList }) => fishList)
+    .flatten()
+    .filter(({ fish }) => fish === '🐋')
+    .filter(({ cm }) => 2200 <= cm)
+    .take(3)
+    .value()
+
+
+
+logger('Array method chain', fishing1.bind(null, places))
 logger('Lodash chain', fishing2.bind(null, places))
+logger('Lazy chain', fishing3.bind(null, places))
+
+// Lodash flow
