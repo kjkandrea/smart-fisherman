@@ -3,11 +3,18 @@ import usStates from '../data/usStates.js'
 
 export class FishingPlace {
   constructor (fishEntries, states, howMany) {
-    // this._places = states
-    const fishList = this.genFishList(fishEntries, howMany)
-    console.log(fishList.some(
-      fish => fish.fish === '🐋' && fish.cm >= 2000)
-    )
+    this._places = this.getStateInFish(fishEntries, states, howMany)
+  }
+
+  get places() {
+    return this._places
+  }
+
+  getStateInFish(fishEntries, states, howMany) {
+    return states.map(state => ({
+      state,
+      fishList: this.genFishList(fishEntries, howMany)
+    }))
   }
 
   genFishList(fishEntries, howMany) {
